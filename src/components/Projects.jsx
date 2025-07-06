@@ -15,11 +15,13 @@ const Projects = ({ isVisible, projects }) => {
     ? projects 
     : selectedCategory === "featured" 
     ? projects.filter(p => p.featured)
+    : selectedCategory === "web" 
+    ? projects.filter(p => p.web)
     : projects.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`transition-all duration-1000 ${
             isVisible
@@ -29,22 +31,22 @@ const Projects = ({ isVisible, projects }) => {
         >
           {/* Section Title */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Mes Projets
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-6" />
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Découvrez une sélection de mes réalisations récentes
             </p>
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 font-medium text-sm sm:text-base ${
                   selectedCategory === category.id
                     ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg transform scale-105"
                     : "bg-white text-gray-600 hover:bg-gray-50 shadow-md hover:shadow-lg"
@@ -56,11 +58,11 @@ const Projects = ({ isVisible, projects }) => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className={`group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2 ${
+                className={`group relative bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2 ${
                   isVisible ? "animate-fade-in" : ""
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -72,7 +74,7 @@ const Projects = ({ isVisible, projects }) => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-48 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   
                   {/* Overlay */}
@@ -80,13 +82,13 @@ const Projects = ({ isVisible, projects }) => {
                   
                   {/* Featured Badge */}
                   {project.featured && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
                       ⭐ Featured
                     </div>
                   )}
                   
                   {/* Quick Actions */}
-                  <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 flex space-x-1 sm:space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <a
                       href={project.githubUrl}
                       target="_blank"

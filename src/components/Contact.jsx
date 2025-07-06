@@ -84,8 +84,8 @@ const Contact = ({ isVisible, socialData }) => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`transition-all duration-1000 ${
             isVisible
@@ -95,17 +95,17 @@ const Contact = ({ isVisible, socialData }) => {
         >
           {/* Section Title */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Contactez-moi
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-6" />
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               N'hésitez pas à me contacter pour discuter de vos projets
             </p>
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
               {/* Contact Form */}
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6">
@@ -123,7 +123,7 @@ const Contact = ({ isVisible, socialData }) => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="Votre nom"
                     />
                   </div>
@@ -138,7 +138,7 @@ const Contact = ({ isVisible, socialData }) => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="votre@email.com"
                     />
                   </div>
@@ -153,7 +153,7 @@ const Contact = ({ isVisible, socialData }) => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                       placeholder="Décrivez votre projet ou votre demande..."
                     />
                   </div>
@@ -161,7 +161,7 @@ const Contact = ({ isVisible, socialData }) => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-4 px-6 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
+                    className={`w-full py-3 sm:py-4 px-5 sm:px-6 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
                       isSubmitting
                         ? "bg-gray-400 cursor-not-allowed"
                         : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
@@ -171,7 +171,7 @@ const Contact = ({ isVisible, socialData }) => {
                   </button>
 
                   {submitStatus === "success" && (
-                    <div className="p-4 bg-green-50 text-green-800 rounded-lg">
+                    <div className="p-3 sm:p-4 bg-green-50 text-green-800 rounded-lg">
                       Message envoyé avec succès ! Je vous répondrai bientôt.
                     </div>
                   )}
@@ -186,9 +186,9 @@ const Contact = ({ isVisible, socialData }) => {
                     Informations de contact
                   </h3>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-6 sm:space-y-8">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                         <span className="text-white text-lg">📧</span>
                       </div>
                       <div>
@@ -198,7 +198,7 @@ const Contact = ({ isVisible, socialData }) => {
                     </div>
 
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center">
+                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center">
                         <span className="text-white text-lg">📱</span>
                       </div>
                       <div>
@@ -208,7 +208,7 @@ const Contact = ({ isVisible, socialData }) => {
                     </div>
 
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
                         <span className="text-white text-lg">📍</span>
                       </div>
                       <div>
@@ -225,27 +225,27 @@ const Contact = ({ isVisible, socialData }) => {
                     Suivez-moi
                   </h3>
                   
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4">
                     {socialLinks.map((social, index) => (
                       <a
                         key={index}
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-4 rounded-xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center group`}
+                        className={`p-3 sm:p-4 rounded-xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center group`}
                       >
-                        <div className="text-2xl mb-2">{social.icon}</div>
-                        <div className="text-sm font-medium">{social.name}</div>
+                        <div className="text-xl sm:text-2xl mb-1 sm:mb-2">{social.icon}</div>
+                        <div className="text-xs sm:text-sm font-medium">{social.name}</div>
                       </a>
                     ))}
                   </div>
                 </div>
 
                 {/* Response Time */}
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white text-center">
-                  <div className="text-3xl mb-2">⚡</div>
-                  <h3 className="text-xl font-semibold mb-2">Réponse rapide</h3>
-                  <p className="text-blue-100">
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white text-center">
+                  <div className="text-2xl sm:text-3xl mb-2">⚡</div>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2">Réponse rapide</h3>
+                  <p className="text-sm sm:text-base text-blue-100">
                     Je réponds généralement dans les 24 heures
                   </p>
                 </div>

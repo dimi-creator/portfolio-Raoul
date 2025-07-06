@@ -34,16 +34,38 @@ export const mockData = {
       technologies: ["React", "Tailwind CSS", "Next.js", "Vercel"],
       githubUrl: "https://github.com/dimi-creator/immigration-site.git",
       demoUrl: "https://immigration-site-phi.vercel.app",
-      featured: true
+      featured: true,
+      web: true
     },
     {
       id: 2,
       title: "Plateforme de Gestion de Tâches",
-      description: "Application de gestion de tâches collaborative avec fonctionnalités temps réel, drag & drop et notifications.",
+      description: "Application web de gestion de tâches collaborative avec fonctionnalités temps réel, drag & drop et notifications.",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
       technologies: ["React", "Laravel", "React Router", "Bootstrap", "mySQL"],
       githubUrl: "https://github.com/dimi-creator/task-manager-app.git",
+      featured: false,
+      web: true
+    },
+    {
+      id: 3,
+      title: "Novatic sarl",
+      description: "Site web d'un prestataire de services de gardiennage et entretien.",
+      image: "/novatic.png",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      githubUrl: "https://github.com/dimi-creator/NOVATIC.git",
       featured: true
+    },
+    {
+      id: 4,
+      title: "Plateforme de billetterie en ligne",
+      description: "Application web de billetterie permettant aux organisateurs de créer des événements et gérer les billets et aux utilisateurs de les acheter.",
+      image: "/billets.png",
+      technologies: ["Laravel", "Blade", "Bootstrap", "Vite.js", "mySQL"],
+      githubUrl: "https://github.com/dimi-creator/Tickethub.git",
+      featured: true,
+      web: true
+      
     }
   ],
   

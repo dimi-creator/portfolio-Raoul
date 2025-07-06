@@ -109,8 +109,8 @@ const Skills = ({ isVisible, skills }) => {
               
               <div className="flex flex-wrap justify-center gap-4">
                 {[
-                  "Diplome d'etudes secondaires - Institut ste julienne Douala",
-                  "Formation en developpement web - Inch class Douala(Programme crée par l'OIF)",
+                  "Diplome d'études secondaires - Institut ste julienne Douala",
+                  "Formation en développement web full stack - Inch class Douala(Programme crée par l'OIF)",
                   "Wordpress - En cours avec udemy",
                   "Apprentissage continue - E-learning",
                 ].map((cert, index) => (
