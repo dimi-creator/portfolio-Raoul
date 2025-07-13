@@ -107,12 +107,12 @@ const Contact = ({ isVisible, socialData }) => {
           <div className="max-w-6xl mx-auto">
             <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
               {/* Contact Form */}
-              <div className="bg-white rounded-2xl shadow-xl p-8">
+              <div className="bg-white rounded-2xl shadow-xl p-4 h-fit flex flex-col">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6">
                   Envoyez-moi un message
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6" method="POST" action="https://formspree.io/f/moqzqjyj">
+                <form onSubmit={handleSubmit} className="space-y-4" method="POST" action="https://formspree.io/f/moqzqjyj">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Nom complet
@@ -158,10 +158,18 @@ const Contact = ({ isVisible, socialData }) => {
                     />
                   </div>
 
+                  {submitStatus === "success" && (
+                    <div className="mb-4">
+                      <div className="p-2 sm:p-3 bg-green-50 text-green-800 rounded-lg">
+                        Message envoyé avec succès ! Je vous répondrai bientôt.
+                      </div>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-3 sm:py-4 px-5 sm:px-6 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
+                    className={`w-full py-2 sm:py-3 px-4 sm:px-5 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
                       isSubmitting
                         ? "bg-gray-400 cursor-not-allowed"
                         : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
@@ -169,12 +177,6 @@ const Contact = ({ isVisible, socialData }) => {
                   >
                     {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
                   </button>
-
-                  {submitStatus === "success" && (
-                    <div className="p-3 sm:p-4 bg-green-50 text-green-800 rounded-lg">
-                      Message envoyé avec succès ! Je vous répondrai bientôt.
-                    </div>
-                  )}
                 </form>
               </div>
 
@@ -186,9 +188,9 @@ const Contact = ({ isVisible, socialData }) => {
                     Informations de contact
                   </h3>
                   
-                  <div className="space-y-6 sm:space-y-8">
+                  <div className="space-y-3 sm:space-y-8">
                     <div className="flex items-center space-x-4">
-                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                         <span className="text-white text-lg">📧</span>
                       </div>
                       <div>
@@ -198,7 +200,7 @@ const Contact = ({ isVisible, socialData }) => {
                     </div>
 
                     <div className="flex items-center space-x-4">
-                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center">
+                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center">
                         <span className="text-white text-lg">📱</span>
                       </div>
                       <div>
@@ -208,7 +210,7 @@ const Contact = ({ isVisible, socialData }) => {
                     </div>
 
                     <div className="flex items-center space-x-4">
-                      <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
                         <span className="text-white text-lg">📍</span>
                       </div>
                       <div>
@@ -242,13 +244,13 @@ const Contact = ({ isVisible, socialData }) => {
                 </div>
 
                 {/* Response Time */}
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white text-center">
-                  <div className="text-2xl sm:text-3xl mb-2">⚡</div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2">Réponse rapide</h3>
-                  <p className="text-sm sm:text-base text-blue-100">
+                {/* <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white text-center w-48 sm:w-64 mx-auto">
+                  <div className="text-xl sm:text-2xl mb-1">⚡</div>
+                  <h3 className="text-sm sm:text-lg font-semibold mb-1">Réponse rapide</h3>
+                  <p className="text-xs sm:text-sm text-blue-100">
                     Je réponds généralement dans les 24 heures
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
