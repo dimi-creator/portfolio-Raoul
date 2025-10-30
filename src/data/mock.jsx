@@ -43,7 +43,7 @@ export const mockData = {
       description: "Application web de gestion de tâches collaborative avec fonctionnalités temps réel, drag & drop et notifications.",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
       technologies: ["React", "Laravel", "React Router", "Bootstrap", "mySQL"],
-      githubUrl: "https://github.com/dimi-creator/task-manager-app.git",
+      githubUrl: "https://github.com/dimi-creator/task-manager-appV1.git",
       featured: false,
       web: true
     },
