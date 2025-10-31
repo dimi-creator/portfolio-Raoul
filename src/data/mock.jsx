@@ -54,7 +54,7 @@ export const mockData = {
       image: "/novatic.png",
       technologies: ["HTML", "CSS", "JavaScript"],
       githubUrl: "https://github.com/dimi-creator/NOVATIC.git",
-      demourl: "https://novatic.netlify.app",
+      demoUrl: "https://novatic.netlify.app",
       featured: true
     },
     {
