@@ -25,7 +25,7 @@ const Portfolio = () => {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     const sections = document.querySelectorAll("section[id]");
