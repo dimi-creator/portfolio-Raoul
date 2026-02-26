@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "./LanguageSelector";
 
 const Header = ({ activeSection, onNavigate, personalData }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,11 +17,11 @@ const Header = ({ activeSection, onNavigate, personalData }) => {
   }, []);
 
   const navItems = [
-    { id: "home", label: "Accueil" },
-    { id: "about", label: "À propos" },
-    { id: "projects", label: "Projets" },
-    { id: "skills", label: "Compétences" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: t("nav.home") },
+    { id: "about", label: t("nav.about") },
+    { id: "projects", label: t("nav.projects") },
+    { id: "skills", label: t("nav.skills") },
+    { id: "contact", label: t("nav.contact") },
   ];
 
   return (
@@ -57,6 +60,9 @@ const Header = ({ activeSection, onNavigate, personalData }) => {
                 {item.label}
               </button>
             ))}
+            
+            {/* Language Selector */}
+            <LanguageSelector />
           </nav>
 
           {/* Mobile Menu Button */}
@@ -104,6 +110,9 @@ const Header = ({ activeSection, onNavigate, personalData }) => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* Language Selector for Mobile */}
+              <LanguageSelector />
             </nav>
           </div>
         )}

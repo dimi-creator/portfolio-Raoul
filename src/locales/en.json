@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Full-Stack Web Developer",
+    "tagline": "Transform ideas into digital experiences",
+    "cta": "Contact me",
+    "cta2": "See my projects",
+    "downloadCV": "Download CV",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "About me",
+    "description": "Passionate about web development, I create modern and performant solutions.",
+    "experience": "Years of experience",
+    "projects": "Completed projects",
+    "location": "Douala, Cameroon",
+    "available": "Available for new projects",
+    "technologies": "Mastered technologies",
+    "myTitle": "Full-Stack Web Developer",
+    "myDescription": "Passionate about web development, I specialize in creating modern and responsive websites and web applications. My journey has taken me from self-taught exploration to intensive training, where I developed a solid mastery of frontend and backend technologies. I enjoy solving complex problems and creating intuitive user interfaces that deliver an exceptional experience."
+  },
+  "projects": {
+    "title": "My Projects",
+    "title2": "Discover a selection of my recent works",
+    "categories": "All projects",
+    "categoryLabels": {
+        "all": "All projects",
+        "featured": "Featured projects",
+        "web": "Web applications",
+        "mobile": "Mobile applications"
+    },
+    "viewProject": "View project",
+    "technologies": "Technologies",
+    "liveDemo": "Live demo",
+    "sourceCode": "Source code",
+    "viewMore": "View more projects"
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "Technologies and tools I master",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools",
+    "certifications": "Trainings & Certifications",
+    "other": "Other",
+    "certificationsList": [
+    "High school diploma - Institut ste julienne Douala",
+    "Training in full stack web development - with Simplon (Partner of the University Agency of the Francophonie - UAF)",
+    "Wordpress - In progress with udemy",
+    "Continuous learning - E-learning"
+    ]
+  },
+  "contact": {
+    "title": "Contact me",
+    "title2": "contact information",
+    "subtitle": "Feel free to contact me to discuss your projects",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "success": "Message sent successfully!",
+    "quickResponse": "Quick response",
+    "processing": "Processing...",
+    "socialLink": "Follow me",
+    "placeholderName": "Your name",
+    "placeholderEmail": "Your@email.com",
+    "placeholderMessage": "Describe your project or your request...",
+    "locationName": "Location",
+    "locationValue": "Douala, Cameroon"
+  },
+  "footer": {
+    "brand": "Web developper passionate about creating exceptional digital experiences",
+    "quickLink": "Quick Links",
+    "copyright": "All rights reserved",
+     "quickLinkListLabel": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "socialContact": "Stay in touch"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "cancel": "Cancel",
+    "validate": "Validate",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete"
+  }
+}

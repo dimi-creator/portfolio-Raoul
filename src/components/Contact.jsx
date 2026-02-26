@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useTranslation } from "react-i18next"; 
 const Contact = ({ isVisible, socialData }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -8,6 +8,7 @@ const Contact = ({ isVisible, socialData }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
+  const { t, i18n } = useTranslation();
 
   const handleChange = (e) => {
     setFormData({
@@ -96,11 +97,11 @@ const Contact = ({ isVisible, socialData }) => {
           {/* Section Title */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Contactez-moi
+               {t('contact.title')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-6" />
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              N'hésitez pas à me contacter pour discuter de vos projets
+              {t('contact.subtitle')}
             </p>
           </div>
 
@@ -109,13 +110,13 @@ const Contact = ({ isVisible, socialData }) => {
               {/* Contact Form */}
               <div className="bg-white rounded-2xl shadow-xl p-4 h-fit flex flex-col">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                  Envoyez-moi un message
+                  {t('contact.send')}
                 </h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-4" method="POST" action="https://formspree.io/f/moqzqjyj">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Nom complet
+                      {t('contact.name')}
                     </label>
                     <input
                       type="text"
@@ -124,13 +125,13 @@ const Contact = ({ isVisible, socialData }) => {
                       onChange={handleChange}
                       required
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Votre nom"
+                      placeholder={t('contact.placeholderName')}
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email
+                      {t('contact.email')}
                     </label>
                     <input
                       type="email"
@@ -139,13 +140,13 @@ const Contact = ({ isVisible, socialData }) => {
                       onChange={handleChange}
                       required
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="votre@email.com"
+                      placeholder={t('contact.placeholderEmail')}
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message
+                      {t('contact.message')}
                     </label>
                     <textarea
                       name="message"
@@ -154,14 +155,14 @@ const Contact = ({ isVisible, socialData }) => {
                       required
                       rows={6}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                      placeholder="Décrivez votre projet ou votre demande..."
+                      placeholder={t('contact.placeholderMessage')}
                     />
                   </div>
 
                   {submitStatus === "success" && (
                     <div className="mb-4">
                       <div className="p-2 sm:p-3 bg-green-50 text-green-800 rounded-lg">
-                        Message envoyé avec succès ! Je vous répondrai bientôt.
+                        {t('contact.success')}
                       </div>
                     </div>
                   )}
@@ -175,7 +176,7 @@ const Contact = ({ isVisible, socialData }) => {
                         : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
                     }`}
                   >
-                    {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
+                    {isSubmitting ? t('contact.processing') : t('contact.send')}
                   </button>
                 </form>
               </div>
@@ -185,7 +186,7 @@ const Contact = ({ isVisible, socialData }) => {
                 {/* Contact Info */}
                 <div className="bg-white rounded-2xl shadow-xl p-8">
                   <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                    Informations de contact
+                    {t('contact.title2')}
                   </h3>
                   
                   <div className="space-y-3 sm:space-y-8">
@@ -214,8 +215,8 @@ const Contact = ({ isVisible, socialData }) => {
                         <span className="text-white text-lg">📍</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800">Localisation</h4>
-                        <p className="text-gray-600">Douala, Cameroun</p>
+                        <h4 className="font-semibold text-gray-800">{t('contact.locationName')}</h4>
+                        <p className="text-gray-600">{t('contact.locationValue')}</p>
                       </div>
                     </div>
                   </div>
@@ -224,7 +225,7 @@ const Contact = ({ isVisible, socialData }) => {
                 {/* Social Links */}
                 <div className="bg-white rounded-2xl shadow-xl p-8">
                   <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-                    Suivez-moi
+                    {t('contact.socialLink')}
                   </h3>
                   
                   <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4">

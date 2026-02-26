@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = ({ socialData }) => {
   const currentYear = new Date().getFullYear();
+  const { t, i18n } = useTranslation();
+  
   
   const socialLinks = [
     {
@@ -38,20 +41,20 @@ const Footer = ({ socialData }) => {
               <h3 className="text-xl font-bold">Raoul Essako</h3>
             </div>
             <p className="text-gray-400">
-              Développeur Web Junior passionné par la création d'expériences numériques exceptionnelles.
+              {t('footer.brand')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Navigation rapide</h4>
+            <h4 className="text-lg font-semibold">{t('footer.quickLink')}</h4>
             <div className="space-y-2">
               {[
-                { label: "Accueil", id: "home" },
-                { label: "À propos", id: "about" },
-                { label: "Projets", id: "projects" },
-                { label: "Compétences", id: "skills" },
-                { label: "Contact", id: "contact" },
+                { label: t('footer.quickLinkListLabel.home'), id:"home" },
+                { label: t('footer.quickLinkListLabel.about'), id:"about" },
+                { label: t('footer.quickLinkListLabel.projects'), id:"projects" },
+                { label: t('footer.quickLinkListLabel.skills'), id:"skills" },
+                { label: t('footer.quickLinkListLabel.contact'), id:"contact" },
               ].map((link) => (
                 <button
                   key={link.id}
@@ -68,7 +71,7 @@ const Footer = ({ socialData }) => {
 
           {/* Social & Contact */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Restons en contact</h4>
+            <h4 className="text-lg font-semibold">{t('footer.socialContact')}</h4>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <a
@@ -92,12 +95,12 @@ const Footer = ({ socialData }) => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} Raoul ESSAKO. Tous droits réservés.
+            © {currentYear} Raoul ESSAKO. {t('footer.copyright')}.
           </p>
           
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
             <span className="text-gray-400 text-sm">
-              Conçu avec ❤️ par Raoul Javan ESSAKO NGUIMBOUS
+              
             </span>
             
             <button

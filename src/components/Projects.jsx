@@ -1,14 +1,25 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const Projects = ({ isVisible, projects }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [hoveredProject, setHoveredProject] = useState(null);
+  const { t, i18n } = useTranslation();
+
+  // Fonction pour récupérer les traductions d'un projet
+  const getProjectTranslation = (project) => {
+    const lang = i18n.language;
+    return {
+      title: project.translations[lang]?.title || project.translations.fr.title,
+      description: project.translations[lang]?.description || project.translations.fr.description
+    };
+  };
 
   const categories = [
-    { id: "all", label: "Tous les projets" },
-    { id: "featured", label: "Projets phares" },
-    { id: "web", label: "Applications web" },
-    { id: "mobile", label: "Applications mobiles" },
+    { id: "all", label: t('projects.categoryLabels.all') },
+    { id: "featured", label: t('projects.categoryLabels.featured') },
+    { id: "web", label: t('projects.categoryLabels.web') },
+    { id: "mobile", label: t('projects.categoryLabels.mobile') },
   ];
 
   const filteredProjects = selectedCategory === "all" 
@@ -32,11 +43,11 @@ const Projects = ({ isVisible, projects }) => {
           {/* Section Title */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Mes Projets
+                {t('projects.title')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-6" />
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              Découvrez une sélection de mes réalisations récentes
+              {t('projects.title2')}
             </p>
           </div>
 
@@ -73,7 +84,7 @@ const Projects = ({ isVisible, projects }) => {
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={getProjectTranslation(project).title}
                     className="w-full h-48 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   
@@ -83,7 +94,7 @@ const Projects = ({ isVisible, projects }) => {
                   {/* Featured Badge */}
                   {project.featured && (
                     <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
-                      ⭐ Featured
+                      ⭐ {t('projects.featured')}
                     </div>
                   )}
                   
@@ -111,11 +122,11 @@ const Projects = ({ isVisible, projects }) => {
                 {/* Project Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
-                    {project.title}
+                    {getProjectTranslation(project).title}
                   </h3>
                   
                   <p className="text-gray-600 mb-4 line-clamp-3">
-                    {project.description}
+                    {getProjectTranslation(project).description}
                   </p>
 
                   {/* Technologies */}
@@ -162,7 +173,7 @@ const Projects = ({ isVisible, projects }) => {
           {/* View More Button */}
           <div className="text-center mt-12">
             <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              Voir plus de projets
+                {t('projects.viewMore')}
             </button>
           </div>
         </div>

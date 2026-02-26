@@ -1,0 +1,101 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Développeur Web Full Stack",
+    "tagline": "Transforme les idées en expériences numériques",
+    "cta": "Me contacter",
+    "cta2": "Voir mes projets",
+    "downloadCV": "Télécharger CV",
+    "scroll": "Défiler"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Passionné par le développement web, je crée des solutions modernes et performantes.",
+    "experience": "Années d'expérience",
+    "projects": "Projets réalisés",
+    "location": "Douala, Cameroun",
+    "available": "Disponible pour de nouveaux projets",
+    "technologies": "Technologies maîtrisées",
+    "myTitle": "Développeur Web Full Stack",
+    "myDescription": "Passionné par le développement web, je me spécialise dans la création des sites et applications web modernes et responsive. Mon parcours m'a mené de la découverte autodidacte à une formation intensive, où j'ai développé une solide maîtrise des technologies frontend et backend. J'aime résoudre des problèmes complexes et créer des interfaces utilisateur intuitives qui offrent une expérience exceptionnelle."
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "title2": "Découvrez une sélection de mes réalisations récentes",
+    "categories": "Tous les projets",
+    "categoryLabels": {
+        "all": "Tous les projets",
+        "featured": "Projets phares",
+        "web": "Applications web",
+        "mobile": "Applications mobiles"
+    },
+    "viewProject": "Voir le projet",
+    "technologies": "Technologies",
+    "liveDemo": "Demo en ligne",
+    "sourceCode": "Code source",
+    "viewMore": "Voir plus de projets"
+  },
+  "skills": {
+    "title": "Compétences",
+    "description": "Technologies et outils que je maîtrise",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Outils",
+    "certifications": "Certifications & Formations",
+    "other": "Autres",
+    "certificationsList": [
+    "Diplome d'études secondaires - Institut ste julienne Douala",
+    "Formation en développement web full stack - Simplon (Partenaire de l'Agence Universitaire de la Francophonie - AUF)",
+    "Wordpress - En cours avec udemy",
+    "Apprentissage continue - E-learning"
+   ]
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "title2": "informations de contact",
+    "subtitle": "N'hésitez pas à me contacter pour discuter de vos projets",
+    "name": "Nom complet",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "success": "Message envoyé avec succès !",
+    "quickResponse": "Réponse rapide",
+    "processing": "Envoi en cours...",
+    "socialLink": "Suivez-moi",
+    "placeholderName": "Votre nom",
+    "placeholderEmail": "Votre@email.com",
+    "placeholderMessage": "Décrivez votre projet ou votre demande...",
+    "locationName": "Localisation",
+    "locationValue": "Douala, Cameroun"
+  },
+  "footer": {
+    "brand": "Développeur web passionné par la création d'expériences numériques exceptionnelles",
+    "quickLink": "Navigation rapide",
+    "copyright": "Tous droits réservés",
+    "quickLinkListLabel": {
+        "home": "Accueil",
+        "about": "A Propos",
+        "projects": "Projets",
+        "skills": "Compétences",
+        "contact": "Contact"
+    },
+    "socialContact": "Restons en contact"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "close": "Fermer",
+    "cancel": "Annuler",
+    "validate": "Valider",
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "delete": "Supprimer"
+  }
+}

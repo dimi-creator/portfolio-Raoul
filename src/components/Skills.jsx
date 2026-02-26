@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 const Skills = ({ isVisible, skills }) => {
+  const { t, i18n } = useTranslation();
   return (
     <section id="skills" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -14,11 +15,11 @@ const Skills = ({ isVisible, skills }) => {
           {/* Section Title */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Compétences
+              {t('skills.title')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-6" />
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Technologies et outils que je maîtrise
+              {t('skills.description')}
             </p>
           </div>
 
@@ -93,10 +94,10 @@ const Skills = ({ isVisible, skills }) => {
                   <span className="text-white text-2xl">🛠️</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                  Outils
+                  {t('skills.tools')}
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Git, Vercel, GitHub, Figma, Composer, VS Code, Windsurf, Vite.js
+                  Git, Vercel, GitHub, Figma, Composer, Render, Windsurf, Vite.js
                 </p>
               </div>
             </div>
@@ -104,16 +105,11 @@ const Skills = ({ isVisible, skills }) => {
             {/* Certifications */}
             <div className="mt-16 text-center">
               <h3 className="text-2xl font-semibold text-gray-800 mb-8">
-                Certifications & Formations
+                {t('skills.certifications')}
               </h3>
               
               <div className="flex flex-wrap justify-center gap-4">
-                {[
-                  "Diplome d'études secondaires - Institut ste julienne Douala",
-                  "Formation en développement web full stack - Inch class Douala(Programme crée par l'OIF)",
-                  "Wordpress - En cours avec udemy",
-                  "Apprentissage continue - E-learning",
-                ].map((cert, index) => (
+                {t('skills.certificationsList',{ returnObjects: true }).map((cert, index) => (
                   <div
                     key={index}
                     className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"

@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Hero = ({ isVisible, personalData }) => {
+  const { t } = useTranslation();
   return (
     <section
       id="home"
@@ -51,12 +53,12 @@ const Hero = ({ isVisible, personalData }) => {
           </h1>
           
           <h2 className="text-2xl md:text-3xl font-light mb-6 text-blue-100">
-            {personalData.title}
+            {t('hero.title')}
           </h2>
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            {personalData.tagline}
+            {t('hero.tagline')}
           </p>
 
           {/* CTA Buttons */}
@@ -65,14 +67,14 @@ const Hero = ({ isVisible, personalData }) => {
               onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              Voir mes projets
+              {t('hero.cta2')}
             </button>
             
             <button
               onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-gray-800 transition-all duration-300 transform hover:scale-105"
             >
-              Me contacter
+              {t('hero.cta')}
             </button>
           </div>
         </div>
