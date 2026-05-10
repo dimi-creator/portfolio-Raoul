@@ -98,6 +98,7 @@ export const mockData = {
       image: "/billets.png",
       technologies: ["Laravel", "Blade", "Bootstrap", "Vite.js", "mySQL"],
       githubUrl: "https://github.com/dimi-creator/Tickethub.git",
+      demoUrl: "https://tickethub.up.railway.app",
       featured: true,
       web: true
     }
