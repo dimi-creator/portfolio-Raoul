@@ -1,7 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { FaPalette, FaServer, FaTools } from 'react-icons/fa';
 const Skills = ({ isVisible, skills }) => {
-  const { t, i18n } = useTranslation();
+  const { t, } = useTranslation();
   return (
     <section id="skills" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -65,7 +66,7 @@ const Skills = ({ isVisible, skills }) => {
               {/* Frontend */}
               <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl">🎨</span>
+                  <FaPalette className="text-white w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   Frontend
@@ -78,26 +79,26 @@ const Skills = ({ isVisible, skills }) => {
               {/* Backend */}
               <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl">⚙️</span>
+                  <FaServer className="text-white w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   Backend
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Node.js, Laravel, Python, FastAPI, PHP, Symfony
+                  PHP, Laravel, Python, Django, Node.js
                 </p>
               </div>
 
               {/* Tools */}
               <div className="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl">🛠️</span>
+                  <FaTools className="text-white w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   {t('skills.tools')}
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Git, Vercel, GitHub, Figma, Composer, Render, Windsurf, Vite.js
+                  Git, Vercel, GitHub, Railway, Composer, Render, Postman, Vite.js
                 </p>
               </div>
             </div>

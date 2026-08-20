@@ -1,8 +1,8 @@
-🌐 Portfolio Personnel
+ Portfolio Personnel
 Bienvenue sur mon portfolio personnel !
 Ce site web a été développé pour présenter mes projets, mes compétences, mon parcours de formation, et permettre aux visiteurs de me contacter facilement.
 
-🚀 Technologies utilisées
+ Technologies utilisées
 React – pour créer une interface utilisateur moderne et dynamique
 
 Vite – pour un bundling rapide et une expérience de développement fluide
@@ -13,7 +13,7 @@ Tailwind CSS  – pour un design responsive et personnalisable
 
 Formspree – pour l'envoi de messages via le formulaire de contact
 
-📁 Fonctionnalités principales
+ Fonctionnalités principales
 ✅ Présentation de mes projets personnels
 
 ✅ Section "À propos" avec mon parcours et mes objectifs
@@ -22,7 +22,7 @@ Formspree – pour l'envoi de messages via le formulaire de contact
 
 ✅ Design responsive (adapté à tous les écrans)
 
-🛠️ Lancer le projet en local
+ Lancer le projet en local
 
 # Cloner le repo
 git clone https://github.com/ton-utilisateur/nom-du-repo.git

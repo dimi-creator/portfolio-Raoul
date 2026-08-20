@@ -1,26 +1,35 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi';
+
 
 const Footer = ({ socialData }) => {
   const currentYear = new Date().getFullYear();
-  const { t, i18n } = useTranslation();
+  const { t, } = useTranslation();
   
   
   const socialLinks = [
     {
       name: "LinkedIn",
       url: socialData.linkedin,
-      icon: "💼",
+      icon: <FaLinkedin size={20} />,
+      gradient: "from-[#0077B5] to-[#00a0dc] hover:from-[#006296] hover:to-[#0077B5]",
+
     },
     {
       name: "GitHub",
       url: socialData.github,
-      icon: "📂",
+      icon: <FaGithub size={20} />,
+      gradient: "from-[#24292E] to-[#4c5157] hover:from-[#14171a] hover:to-[#24292E]",
+
     },
     {
       name: "Email",
       url: `mailto:${socialData.email}`,
-      icon: "📧",
+      icon: <HiOutlineMail size={20} />,
+      gradient: "from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700",
+
     },
   ];
 
@@ -79,7 +88,7 @@ const Footer = ({ socialData }) => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 transition-all duration-300 transform hover:scale-110"
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${social.gradient}`}
                   title={social.name}
                 >
                   <span className="text-sm">{social.icon}</span>
@@ -87,7 +96,7 @@ const Footer = ({ socialData }) => {
               ))}
             </div>
             <p className="text-gray-400 text-sm">
-              📧 {socialData.email}
+              {/* 📧 {socialData.email} */}
             </p>
           </div>
         </div>

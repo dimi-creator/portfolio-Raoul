@@ -1,5 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { HiOutlineMail, HiOutlineLocationMarker } from 'react-icons/hi';
+import { FaBriefcase, FaLaptopCode, FaRocket } from 'react-icons/fa';
 const About = ({ isVisible, personalData }) => {
   const { t } = useTranslation();
   return (
@@ -23,7 +25,8 @@ const About = ({ isVisible, personalData }) => {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Image */}
-              <div className="relative">
+
+              {/* <div className="relative">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                   <img
                     src={personalData.avatar}
@@ -31,17 +34,17 @@ const About = ({ isVisible, personalData }) => {
                     className="w-full h-96 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent" />
-                </div>
+                </div> */}
                 
                 {/* Floating elements */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
-                  <span className="text-white text-2xl">💻</span>
+                {/* <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
+                  <FaLaptopCode className="text-white w-6 h-6" />
                 </div>
                 
                 <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center shadow-xl">
-                  <span className="text-white text-xl">🚀</span>
+                  <FaRocket className="text-white w-5 h-5" />
                 </div>
-              </div>
+              </div> */}
 
               {/* Content */}
               <div className="space-y-6">
@@ -71,21 +74,21 @@ const About = ({ isVisible, personalData }) => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                      <span className="text-blue-600 text-sm">📍</span>
+                        <HiOutlineLocationMarker className="text-blue-600 w-4 h-4" />
                     </div>
                     <span className="text-gray-600">{t("about.location")}</span>
                   </div>
                   
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                      <span className="text-purple-600 text-sm">📧</span>
+                        <HiOutlineMail className="text-purple-600 w-4 h-4" />
                     </div>
                     <span className="text-gray-600">{personalData.email}</span>
                   </div>
                   
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-600 text-sm">💼</span>
+                        <FaBriefcase className="text-green-600 w-4 h-4" />
                     </div>
                     <span className="text-gray-600">{t("about.available")}</span>
                   </div>

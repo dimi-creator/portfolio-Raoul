@@ -12,18 +12,19 @@ export const mockData = {
   },
   
   skills: [
-    { name: "HTML5", level: 90, icon: "🌐" },
-    { name: "CSS3", level: 85, icon: "🎨" },
-    { name: "JavaScript", level: 80, icon: "⚡" },
-    { name: "Python", level: 80, icon: "🚀" },
-    { name: "PHP", level: 80, icon: "⚡" },
-    { name: "Laravel", level: 80, icon: "⚡" },
-    { name: "React", level: 75, icon: "⚛️" },
-    { name: "Next.js", level: 75, icon: "🚀" },
-    { name: "Git", level: 85, icon: "📝" },
-    { name: "MySQL", level: 90, icon: "🍃" },
-    { name: "Tailwind CSS", level: 80, icon: "💨" },
-    { name: "Bootstrap", level: 80, icon: "💨" }
+    { name: "HTML5", level: 90, icon: "" },
+    { name: "CSS3", level: 85, icon: "" },
+    { name: "JavaScript", level: 80, icon: "" },
+    { name: "Python", level: 80, icon: "" },
+    { name: "PHP", level: 80, icon: "" },
+    { name: "Laravel", level: 80, icon: "" },
+    { name: "Django", level: 80, icon: "" },
+    { name: "React", level: 75, icon: "" },
+    { name: "Next.js", level: 75, icon: "" },
+    { name: "Git/GitHub", level: 90, icon: "" },
+    { name: "MySQL", level: 90, icon: "" },
+    { name: "Tailwind CSS", level: 80, icon: "" },
+    { name: "Bootstrap", level: 80, icon: "" }
   ],
   
   projects: [

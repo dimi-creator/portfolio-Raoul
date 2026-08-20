@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projects = ({ isVisible, projects }) => {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [hoveredProject, setHoveredProject] = useState(null);
   const { t, i18n } = useTranslation();
 
   // Fonction pour récupérer les traductions d'un projet
@@ -77,8 +77,7 @@ const Projects = ({ isVisible, projects }) => {
                   isVisible ? "animate-fade-in" : ""
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
-                onMouseEnter={() => setHoveredProject(project.id)}
-                onMouseLeave={() => setHoveredProject(null)}
+                
               >
                 {/* Project Image */}
                 <div className="relative overflow-hidden">
@@ -106,7 +105,7 @@ const Projects = ({ isVisible, projects }) => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                     >
-                      <span className="text-gray-800">📂</span>
+                      <FaGithub className="text-gray-800 w-4 h-4" />
                     </a>
                     <a
                       href={project.demoUrl}
@@ -114,7 +113,7 @@ const Projects = ({ isVisible, projects }) => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                     >
-                      <span className="text-gray-800">🚀</span>
+                      <FaExternalLinkAlt className="text-gray-800 w-4 h-4" />
                     </a>
                   </div>
                 </div>
@@ -149,7 +148,7 @@ const Projects = ({ isVisible, projects }) => {
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
                     >
-                      <span>📂</span>
+                      <FaGithub className="w-4 h-4" />
                       <span className="text-sm">Code</span>
                     </a>
                     <a
@@ -158,7 +157,7 @@ const Projects = ({ isVisible, projects }) => {
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-colors"
                     >
-                      <span>🚀</span>
+                      <FaExternalLinkAlt className="w-4 h-4" />
                       <span className="text-sm">Demo</span>
                     </a>
                   </div>

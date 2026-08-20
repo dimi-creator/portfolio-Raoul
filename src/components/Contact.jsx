@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next"; 
+import { FaWhatsapp } from "react-icons/fa";
+import { HiOutlineMail } from 'react-icons/hi';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+
+
+
+
+
 const Contact = ({ isVisible, socialData }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -8,7 +17,7 @@ const Contact = ({ isVisible, socialData }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const handleChange = (e) => {
     setFormData({
@@ -61,26 +70,26 @@ const Contact = ({ isVisible, socialData }) => {
     {
       name: "LinkedIn",
       url: socialData.linkedin,
-      icon: "💼",
-      color: "from-blue-500 to-blue-600",
+      icon: <FaLinkedin size={20} />,
+      gradient: "from-blue-500 to-blue-600",
     },
     {
       name: "GitHub",
       url: socialData.github,
-      icon: "📂",
-      color: "from-gray-700 to-gray-800",
+      icon: <FaGithub size={20} />,
+      gradient: "from-gray-700 to-gray-800",
     },
     {
       name: "WhatsApp",
       url: socialData.whatsapp,
-      icon: "📱",
-      color: "from-green-500 to-green-600",
+      icon: <FaWhatsapp size={20} />,
+      gradient: "from-green-500 to-green-600",
     },
     {
       name: "Email",
       url: `mailto:${socialData.email}`,
-      icon: "📧",
-      color: "from-red-500 to-red-600",
+      icon: <HiOutlineMail size={20} />,
+      gradient: "from-red-500 to-red-600",
     },
   ];
 
@@ -191,8 +200,8 @@ const Contact = ({ isVisible, socialData }) => {
                   
                   <div className="space-y-3 sm:space-y-8">
                     <div className="flex items-center space-x-4">
-                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-lg">📧</span>
+                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-sm">
+                        <HiOutlineMail size={20} className="text-white sm:w-6 sm:h-6" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-800">Email</h4>
@@ -201,18 +210,18 @@ const Contact = ({ isVisible, socialData }) => {
                     </div>
 
                     <div className="flex items-center space-x-4">
-                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-lg">📱</span>
+                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-[#25D366] rounded-full flex items-center justify-center shadow-sm">
+                        <FaWhatsapp size={20} className="text-white sm:w-6 sm:h-6" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-800">WhatsApp</h4>
-                        <p className="text-gray-600">+237 680 34 59 55</p>
+                        <p className="text-gray-600">+237 656 85 51 45</p>
                       </div>
                     </div>
 
                     <div className="flex items-center space-x-4">
-                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-lg">📍</span>
+                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-red-500 rounded-full flex items-center justify-center">
+                        <HiOutlineLocationMarker size={20} className="text-white sm:w-6 sm:h-6" />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-800">{t('contact.locationName')}</h4>
@@ -228,21 +237,28 @@ const Contact = ({ isVisible, socialData }) => {
                     {t('contact.socialLink')}
                   </h3>
                   
-                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4">
+                  {/* Note : grid-cols-2 suffit, pas besoin de réécrire sm:grid-cols-2 */}
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     {socialLinks.map((social, index) => (
                       <a
                         key={index}
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-3 sm:p-4 rounded-xl bg-gradient-to-r ${social.color} text-white hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center group`}
-                      >
-                        <div className="text-xl sm:text-2xl mb-1 sm:mb-2">{social.icon}</div>
-                        <div className="text-xs sm:text-sm font-medium">{social.name}</div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
+                        className={`p-4 sm:p-5 rounded-xl bg-gradient-to-r ${social.gradient} text-white flex flex-col items-center justify-center gap-2 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group`}
+                     >
+                        {/* L'icône s'anime discrètement au survol du bouton */}
+                       <div className="transition-transform duration-300 group-hover:scale-110">
+                           {social.icon}
+                       </div>
+      
+                        {/* Le texte sous l'icône */}
+                        <div className="text-xs sm:text-sm font-semibold tracking-wide">{social.name}</div>
+                     </a>
+                ))}
+              </div>
+
+              </div>
 
                 {/* Response Time */}
                 {/* <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white text-center w-48 sm:w-64 mx-auto">
